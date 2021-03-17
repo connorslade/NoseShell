@@ -29,10 +29,9 @@ int main() {
         refreshConsoleInfo(w, h);
         workingDir = "\n[*] \033[33m[" + getDir() + "]";
         returnPrint(cmdRet, workingDir);
-        std::cout << "\033[" << std::to_string(w - (5 + workingDir.length())) << "C\033[36m[" << getTime() << "]\033[0m\033[" << std::to_string(w - workingDir.length() + 3)<< "D";
+        std::cout << "\033[" << std::to_string(w - (5 + workingDir.length())) << "C\033[36m[" << getTime() << "]\033[0m\033[" << std::to_string(w - workingDir.length() + 4)<< "D";
 
         if (!std::getline(std::cin, line)) break;
-
         tokenize(line, ' ', out);
 
         if (out.size() < 1)
