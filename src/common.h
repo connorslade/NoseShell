@@ -1,4 +1,5 @@
 #include <vector>
+#include <iomanip>
 
 void debugPrint(std::string text, int colorcode, std::string stringEnd = "\n") {
     std::cout << "\x1B[" << colorcode << "m" << text << "\033[0m" << stringEnd;
@@ -17,6 +18,27 @@ void errorPrint(std::string text, int colorcode, int exitCode){
     system("pause");
     std::cout << "\033[0m";
     exit(exitCode);
+}
+
+void refreshConsoleInfo(int& w, int& h){
+    CONSOLE_SCREEN_BUFFER_INFO csbi;
+    GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
+    w = csbi.srWindow.Right - csbi.srWindow.Left + 1;
+    h = csbi.srWindow.Bottom - csbi.srWindow.Top + 1;
+}
+
+std::string getTime(){
+    time_t rawtime;
+    struct tm * timeinfo;
+    char buffer[80];
+
+    time (&rawtime);
+    timeinfo = localtime(&rawtime);
+
+    strftime(buffer,sizeof(buffer),"%H:%M:%S",timeinfo);
+    std::string str(buffer);
+
+    return str;
 }
 
 void tokenize(std::string const &str, const char delim,
