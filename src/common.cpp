@@ -7,17 +7,16 @@
 #include <algorithm>
 
 #include "common.h"
-
-#define Max_Len 1024
+#include "config.h"
 
 void debugPrint(std::string text, int colorcode, std::string stringEnd) {
     std::cout << "\x1B[" << colorcode << "m" << text << "\033[0m" << stringEnd;
 }
 
 void returnPrint(int cmdRet, std::string text){
-    int colorcode = 32;
+    int colorcode = cmdSuccess;
     if (cmdRet != 0)
-        colorcode = 31;
+        colorcode = cmdFail;
     std::cout << "\x1B[" << colorcode << "m" << text << "\033[0m";
 }
 
@@ -76,6 +75,7 @@ void tokenize(std::string const &str, const char delim, std::vector<std::string>
     }
 }
 
-bool in_array(const std::string &value, const std::vector<std::string> &array) {
-    return std::find(array.begin(), array.end(), value) != array.end();
+std::string colorFromCode(int code){
+    std::string color = "\x1B[" + std::to_string(code) + "m";
+    return color;
 }
