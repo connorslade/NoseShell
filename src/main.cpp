@@ -18,7 +18,7 @@ int main() {
     SetConsoleMode(hStdout, l_mode | 0x0004 | 0x0008);
 
     debugPrint("\x1B[1;34mWelcome to NOSE SHELL! \x1B[35mV0.0.3", 32);
-    debugPrint("Copyright (C) Connor Slade. All rights reserved.\n", 35);
+    debugPrint("Copyright (C) Connor Slade. All rights reserved... NOT!\n", 35);
 
     while (true) {
         refreshConsoleInfo(w, h);
