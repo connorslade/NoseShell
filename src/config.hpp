@@ -6,7 +6,7 @@
 #ifndef NOSESHELL_CONFIG_HPP
 #define NOSESHELL_CONFIG_HPP
 namespace config {
-    /* COLORES */
+    /* COLORS */
     static const int cmdSuccess = 32;
     static const int cmdFail = 31;
 
@@ -22,8 +22,13 @@ namespace config {
     /* NUMBERS */
     static const unsigned long maxDir = 260;
 
-    /* ARRAYS */
+    /* ALIAS  */
+#if defined(WIN32) || defined(_WIN32) || defined(__WIN32) && !defined(__CYGWIN__)
+    static const std::string alias[2][2] = {{"ls",    "dir"},
+                                            {"clear", "cls"}};
+#else
     static const std::string alias[2][2] = {{"ls", "ls -CF --color=auto"},
-                                            {"c", "clear"}};
+                                            {"c",  "clear"}};
+#endif
 }
 #endif
