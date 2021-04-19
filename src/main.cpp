@@ -18,7 +18,7 @@ int main() {
     int cmdRet = 0, w, h;
 
     common::enableAnsiCodes();
-    common::debugPrint("\x1B[1;34mWelcome to NOSE SHELL! \x1B[35mV0.0.3", 32);
+    common::debugPrint("\x1B[1;34mWelcome to NOSE SHELL! \x1B[35mV0.1.0", 32);
     common::debugPrint("Copyright (C) Connor Slade. All rights reserved... NOT! :P\n", 35);
 
     while (true) {
