@@ -3,10 +3,10 @@
     <img src="https://raw.githubusercontent.com/Basicprogrammer10/NoseShell/main/Logo.png" alt="Logo">
   </a>
 
-  <h3 align="center">Nose Shell</h3>
+  <h3 align="center">🐚 Nose Shell 🐚</h3>
 
 <p align="center">
-    A Shell for Windows 🐚 Making CMD slightly less bad :P
+    A Shell for Windows (And Linux)<br />Making CMD slightly less bad :P
     <br />
     <br />
     <a href="https://github.com/Basicprogrammer10/NoseShell/issues">Report Bug</a>
